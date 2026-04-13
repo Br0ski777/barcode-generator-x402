@@ -31,6 +31,44 @@ Do NOT use for QR codes -- use utility_generate_qr_code instead. Do NOT use for 
         },
         required: ["data"],
       },
+      outputSchema: {
+          "type": "object",
+          "properties": {
+            "data": {
+              "type": "string",
+              "description": "Input data encoded"
+            },
+            "format": {
+              "type": "string",
+              "description": "Barcode format used"
+            },
+            "barWidth": {
+              "type": "number",
+              "description": "Bar width in pixels"
+            },
+            "height": {
+              "type": "number",
+              "description": "Barcode height in pixels"
+            },
+            "encoding": {
+              "type": "string",
+              "description": "Image encoding (base64)"
+            },
+            "mimeType": {
+              "type": "string",
+              "description": "MIME type (image/svg+xml)"
+            },
+            "image": {
+              "type": "string",
+              "description": "Base64-encoded SVG image"
+            }
+          },
+          "required": [
+            "data",
+            "format",
+            "image"
+          ]
+        },
     },
   ],
 };
