@@ -3,7 +3,7 @@ import type { ApiConfig } from "./shared";
 export const API_CONFIG: ApiConfig = {
   name: "barcode-generator",
   slug: "barcode-generator",
-  description: "Generate barcodes in multiple formats — EAN-13, UPC-A, Code128, Code39, QR. Returns base64 SVG.",
+  description: "Generate barcodes -- EAN-13, UPC-A, Code128, Code39. Base64 SVG output, custom width and height.",
   version: "1.0.0",
   routes: [
     {
@@ -12,7 +12,15 @@ export const API_CONFIG: ApiConfig = {
       price: "$0.001",
       description: "Generate a barcode from text or number",
       toolName: "utility_generate_barcode",
-      toolDescription: "Use this when you need to generate a barcode from text or a number. Supports EAN-13, UPC-A, Code128, Code39 formats. Returns base64 SVG image. Do NOT use for QR codes — use utility_generate_qr_code instead. Do NOT use for color palettes — use design_generate_color_palette instead.",
+      toolDescription: `Use this when you need to generate a barcode from text or a number. Returns base64-encoded SVG image in JSON.
+
+Returns: 1. image (base64 SVG string) 2. format used (code128/code39/ean13/upca) 3. data encoded 4. width and height in pixels.
+
+Example output: {"data":"5901234123457","format":"ean13","image":"PHN2ZyB4bWxu...","width":264,"height":142}
+
+Use this FOR product labeling, inventory management, shipping labels, retail POS systems, and asset tracking barcodes.
+
+Do NOT use for QR codes -- use utility_generate_qr_code instead. Do NOT use for image resizing -- use media_resize_image instead. Do NOT use for PDF generation -- use document_generate_pdf instead.`,
       inputSchema: {
         type: "object",
         properties: {
