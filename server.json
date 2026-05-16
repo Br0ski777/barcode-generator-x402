@@ -12,7 +12,7 @@
   "remotes": [
     {
       "type": "sse",
-      "url": "https://barcode-generator-x402-production.up.railway.app/mcp"
+      "url": "https://barcode-generator.api.klymax402.com/mcp"
     }
   ]
 }
