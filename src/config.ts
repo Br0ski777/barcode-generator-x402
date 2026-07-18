@@ -9,7 +9,7 @@ export const API_CONFIG: ApiConfig = {
     {
       method: "POST",
       path: "/api/barcode",
-      price: "$0.001",
+      price: "$0.003",
       description: "Generate a barcode from text or number",
       toolName: "utility_generate_barcode",
       toolDescription: `Use this when you need to generate a barcode from text or a number. Returns base64-encoded SVG image in JSON.
